@@ -11,13 +11,10 @@ class ApiController extends Controller
         $call = 'testecusto2';
         $apiService = new ApiService();
 
-        $request = $apiService->request('testecusto2');
-
-        $options = $this->getBestOption($request,$value);
 
         $request = $apiService->request($call);
-        
-        $options = $this->getBestOption($request,$value); 
+
+        $options = $this->getBestOption($request,$value);
 
         asort($options);
 
