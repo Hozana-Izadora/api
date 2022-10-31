@@ -8,10 +8,17 @@ use App\Services\ApiService;
 class ApiController extends Controller
 {
     public function index($value){
+        $call = 'testecusto2';
         $apiService = new ApiService();
+
         $request = $apiService->request('testecusto2');
 
         $options = $this->getBestOption($request,$value);
+
+        $request = $apiService->request($call);
+        
+        $options = $this->getBestOption($request,$value); 
+
         asort($options);
 
         return view('api.index', compact('options'));
